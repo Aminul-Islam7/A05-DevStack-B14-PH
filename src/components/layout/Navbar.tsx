@@ -35,8 +35,8 @@ export default function Navbar() {
 				</ul>
 
 				<div className="flex gap-2 items-center font-medium">
-					<a href="#" className="px-4 py-2 rounded-3xl hover:bg-neutral-200">
-						Sign in
+					<a href="#" className="px-4 py-2 rounded-3xl">
+						Sign In
 					</a>
 					<a href="#" className="bg-brand-primary px-4 py-2 rounded-3xl text-white">
 						Sign Up
