@@ -10,8 +10,7 @@
 
 @layer base {
 	body {
-		color: #475569;
-		background-color: #fafafc;
+		color: var(--color-neutral-500);
 	}
 }
 
