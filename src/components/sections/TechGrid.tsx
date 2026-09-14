@@ -26,7 +26,7 @@ export default function TechGrid() {
 					))}
 				</div>
 				<div className="flex-1">
-					<StackSidebar items={items}></StackSidebar>
+					<StackSidebar items={items} setItems={setItems}></StackSidebar>
 				</div>
 			</div>
 		</div>

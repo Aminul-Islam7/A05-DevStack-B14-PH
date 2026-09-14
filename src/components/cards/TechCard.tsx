@@ -1,20 +1,24 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import type { Tech } from '../../types/tech';
-import type { Dispatch } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
 import { toast } from 'react-toastify';
 
 interface TechCardProps {
 	tech: Tech;
 	items: Tech[];
-	setItems: Dispatch<React.SetStateAction<Tech[]>>;
+	setItems: Dispatch<SetStateAction<Tech[]>>;
 }
 
 const defaultBadgeStyle = 'bg-neutral-100 text-neutral-600 border-neutral-200';
 
 export default function TechCard({ tech, items, setItems }: TechCardProps) {
 	function handleAddToStack() {
-		items.find(item => item === tech) ? toast.error(`${tech.name} is already added to your stack!`) : setItems([...items, tech]);
+		if (items.find(item => item === tech)) toast.error(`${tech.name} is already added to your stack!`);
+		else {
+			setItems([...items, tech]);
+			toast.success(`${tech.name} has been added to your stack successfully!`);
+		}
 	}
 
 	return (
