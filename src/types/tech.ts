@@ -7,4 +7,5 @@ export interface Tech {
 	rating: number;
 	difficulty: 'Beginner-Friendly' | 'Intermediate' | 'Advanced';
 	badge: string;
+	badgeColor?: string;
 }

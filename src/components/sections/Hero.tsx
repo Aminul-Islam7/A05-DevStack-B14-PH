@@ -4,7 +4,7 @@ export default function Hero() {
 	return (
 		<div className="container mx-auto flex py-10 items-center justify-between">
 			<article className="max-w-140 space-y-8">
-				<h1 className="text-6xl font-display font-bold text-black">
+				<h1 className="text-6xl font-display font-extrabold text-black">
 					Build Your Ideal <span className="text-brand-gradient">Development Stack</span>
 				</h1>
 				<p>Explore frontend, backend, database, and tooling options, compare them side by side, and put together the stack that fits your next project.</p>
