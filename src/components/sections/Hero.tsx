@@ -3,7 +3,7 @@ import heroImage from '../../assets/hero-image.png';
 export default function Hero() {
 	return (
 		<div className="container mx-auto flex py-10 items-center justify-between">
-			<div className="max-w-140 space-y-8">
+			<article className="max-w-140 space-y-8">
 				<h1 className="text-6xl font-display font-bold text-black">
 					Build Your Ideal <span className="text-brand-gradient">Development Stack</span>
 				</h1>
@@ -16,7 +16,7 @@ export default function Hero() {
 						Learn More
 					</a>
 				</div>
-			</div>
+			</article>
 			<img src={heroImage} className="max-w-150" alt="Tech Stack Illustration" />
 		</div>
 	);
