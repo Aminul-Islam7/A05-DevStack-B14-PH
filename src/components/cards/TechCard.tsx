@@ -1,14 +1,22 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import type { Tech } from '../../types/tech';
+import type { Dispatch } from 'react';
+import { toast } from 'react-toastify';
 
 interface TechCardProps {
 	tech: Tech;
+	items: Tech[];
+	setItems: Dispatch<React.SetStateAction<Tech[]>>;
 }
 
 const defaultBadgeStyle = 'bg-neutral-100 text-neutral-600 border-neutral-200';
 
-export default function TechCard({ tech }: TechCardProps) {
+export default function TechCard({ tech, items, setItems }: TechCardProps) {
+	function handleAddToStack() {
+		items.find(item => item === tech) ? toast.error(`${tech.name} is already added to your stack!`) : setItems([...items, tech]);
+	}
+
 	return (
 		<article className="border border-neutral-200 p-5 rounded-2xl space-y-3 flex flex-col justify-between">
 			<div className="flex justify-between items-start">
@@ -26,7 +34,9 @@ export default function TechCard({ tech }: TechCardProps) {
 					{tech.rating}
 				</p>
 			</div>
-			<button className="bg-neutral-900 hover:bg-neutral-950 transition-colors text-white w-full p-3 rounded-xl mt-2 cursor-pointer self-end">Add to Stack</button>
+			<button onClick={handleAddToStack} className="bg-neutral-900 hover:bg-neutral-950 transition-colors text-white w-full p-3 rounded-xl mt-2 cursor-pointer self-end">
+				Add to Stack
+			</button>
 		</article>
 	);
 }

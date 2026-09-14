@@ -5,6 +5,7 @@ import StackSidebar from '../stack/StackSidebar';
 
 export default function TechGrid() {
 	const [technologies, setTechnologies] = useState<Tech[]>([]);
+	const [items, setItems] = useState<Tech[]>([]);
 	useEffect(() => {
 		fetch('/data/technologies.json')
 			.then(response => response.json())
@@ -21,11 +22,11 @@ export default function TechGrid() {
 			<div className="flex mt-10 gap-6">
 				<div className="grid grid-cols-3 gap-6 flex-3">
 					{technologies.map(tech => (
-						<TechCard tech={tech} key={tech.id}></TechCard>
+						<TechCard tech={tech} items={items} setItems={setItems} key={tech.id}></TechCard>
 					))}
 				</div>
 				<div className="flex-1">
-					<StackSidebar></StackSidebar>
+					<StackSidebar items={items}></StackSidebar>
 				</div>
 			</div>
 		</div>
