@@ -1,10 +1,25 @@
 @import 'tailwindcss';
 
+@theme {
+	--font-sans: 'Plus Jakarta Sans', sans-serif;
+	--font-heading: 'Inter', sans-serif;
+	--color-brand-primary: #d81b7e;
+	--color-brand-orange: #ff5722;
+	--color-brand-purple: #7c3aed;
+}
+
+@layer base {
+	body {
+		color: #475569;
+		background-color: #fafafc;
+	}
+}
+
 @layer utilities {
 	.brand-gradient {
-		@apply bg-linear-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED];
+		@apply bg-linear-to-r from-brand-orange via-brand-primary to-brand-purple;
 	}
 	.text-brand-gradient {
-		@apply bg-linear-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED] bg-clip-text text-transparent;
+		@apply bg-linear-to-r from-brand-orange via-brand-primary to-brand-purple bg-clip-text text-transparent;
 	}
 }
